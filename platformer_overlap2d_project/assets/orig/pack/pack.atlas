@@ -1,0 +1,43 @@
+
+pack.png
+size: 409,218
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Goldprogress
+  rotate: false
+  xy: 2, 2
+  size: 30, 102
+  split: 9, 9, 9, 9
+  orig: 30, 102
+  offset: 0, 0
+  index: -1
+ball
+  rotate: false
+  xy: 329, 138
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+item1
+  rotate: false
+  xy: 234, 19
+  size: 93, 199
+  orig: 93, 199
+  offset: 0, 0
+  index: -1
+paltform1
+  rotate: false
+  xy: 2, 138
+  size: 230, 80
+  split: 112, 109, 49, 28
+  orig: 230, 80
+  offset: 0, 0
+  index: -1
+paltform2
+  rotate: false
+  xy: 2, 106
+  size: 220, 30
+  orig: 220, 30
+  offset: 0, 0
+  index: -1
