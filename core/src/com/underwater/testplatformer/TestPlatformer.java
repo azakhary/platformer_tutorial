@@ -34,7 +34,6 @@ public class TestPlatformer extends ApplicationAdapter {
         gameStage.act();
         gameStage.draw();
 
-        menuStage.act();
-        menuStage.draw();
+        menuStage.render();
 	}
 }
