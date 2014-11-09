@@ -4,8 +4,13 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.GL20;
+import com.uwsoft.editor.renderer.data.ProjectInfoVO;
+import com.uwsoft.editor.renderer.data.ResolutionEntryVO;
+import com.uwsoft.editor.renderer.resources.ResourceManager;
 
 public class TestPlatformer extends ApplicationAdapter {
+
+    private PlatformerResourceManager rm;
 
     private InputMultiplexer inputMultiplexer;
 
@@ -15,10 +20,13 @@ public class TestPlatformer extends ApplicationAdapter {
 	@Override
 	public void create () {
 
+        rm = new PlatformerResourceManager();
+        rm.initPlatformerResources();
+
         inputMultiplexer = new InputMultiplexer();
 
-        gameStage = new GameStage();
-        menuStage = new MenuStage(gameStage);
+        gameStage = new GameStage(rm);
+        menuStage = new MenuStage(rm, gameStage);
 
         inputMultiplexer.addProcessor(gameStage);
         inputMultiplexer.addProcessor(menuStage);

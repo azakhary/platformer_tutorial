@@ -16,18 +16,22 @@ public class MovingPlatform implements IScript {
 
     private int direction = 1;
 
-    private float moveSpeed = 50f;
-    private float margin = 100f;
+    private float moveSpeed;
+    private float margin;
 
     @Override
     public void init(CompositeItem item) {
         this.item = item;
+
+        moveSpeed = 50f * item.mulY;
+        margin = 100f * item.mulY;
+
         originalPosY = item.getY();
 
         if(item.getCustomVariables().getFloatVariable("platformSpeed") != null)
-            moveSpeed = item.getCustomVariables().getFloatVariable("platformSpeed");
+            moveSpeed = item.getCustomVariables().getFloatVariable("platformSpeed") * item.mulY;
         if(item.getCustomVariables().getFloatVariable("platformMargin") != null)
-            margin = item.getCustomVariables().getFloatVariable("platformMargin");
+            margin = item.getCustomVariables().getFloatVariable("platformMargin") * item.mulY;
     }
 
     @Override
