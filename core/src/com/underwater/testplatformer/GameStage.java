@@ -18,8 +18,10 @@ public class GameStage extends Overlap2DStage {
     private PlayerController player;
 
     public GameStage(PlatformerResourceManager rm) {
-        super(new StretchViewport(rm.currentResolution.width, rm.currentResolution.height));
+        super(new StretchViewport(rm.stageWidth, rm.currentResolution.height));
+
         this.rm = rm;
+
         // This will create SceneLoader instance and configure all things like default resource manager, physics e.t.c
         initSceneLoader(rm);
         sceneLoader.setResolution(rm.currentResolution.name);

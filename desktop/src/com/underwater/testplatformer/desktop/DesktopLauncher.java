@@ -7,7 +7,7 @@ import com.underwater.testplatformer.TestPlatformer;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-        config.width = 800;
+        config.width = 900;
         config.height = 480;
 		new LwjglApplication(new TestPlatformer(), config);
 	}
