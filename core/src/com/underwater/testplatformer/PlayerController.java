@@ -28,11 +28,11 @@ public class PlayerController implements IScript {
     private boolean isWalking = false;
     private boolean isGrounded = false;
 
-    private float moveSpeed = 220f;
-    private float gravity = -1500f;
-    private float jumpSpeed = 700f;
-    private float verticalSpeed = 0;
+    private float moveSpeed;
+    private float gravity;
+    private float jumpSpeed;
 
+    private float verticalSpeed = 0;
     private int jumpCounter = 0;
 
     private Vector2 initialCoordinates;
@@ -44,6 +44,13 @@ public class PlayerController implements IScript {
     @Override
     public void init(CompositeItem item) {
         this.item = item;
+
+
+        moveSpeed = 220f * item.mulX;
+        gravity = -1500f * item.mulY;
+        jumpSpeed = 700f * item.mulY;
+
+
         animation = item.getSpriteAnimationById("animation");
 
         animation.pause();
