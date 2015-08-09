@@ -1,0 +1,53 @@
+
+pack.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball
+  rotate: false
+  xy: 329, 121
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+btn
+  rotate: false
+  xy: 2, 35
+  size: 12, 52
+  split: 4, 5, 6, 7
+  orig: 12, 52
+  offset: 0, 0
+  index: -1
+btnPressed
+  rotate: false
+  xy: 329, 73
+  size: 12, 46
+  split: 4, 5, 4, 5
+  orig: 12, 46
+  offset: 0, 0
+  index: -1
+paltform1
+  rotate: false
+  xy: 2, 121
+  size: 230, 80
+  split: 112, 109, 49, 28
+  orig: 230, 80
+  offset: 0, 0
+  index: -1
+paltform2
+  rotate: false
+  xy: 2, 89
+  size: 220, 30
+  orig: 220, 30
+  offset: 0, 0
+  index: -1
+pillar
+  rotate: false
+  xy: 234, 2
+  size: 93, 199
+  split: 0, 93, 65, 51
+  pad: -1, -1, 65, 50
+  orig: 93, 199
+  offset: 0, 0
+  index: -1
