@@ -4,13 +4,9 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.uwsoft.editor.renderer.SceneLoader;
-import com.uwsoft.editor.renderer.components.additional.ButtonComponent;
 import com.uwsoft.editor.renderer.utils.ItemWrapper;
 
 public class PlatformerTutorial extends ApplicationAdapter {
@@ -29,10 +25,14 @@ public class PlatformerTutorial extends ApplicationAdapter {
 
 		ItemWrapper root = new ItemWrapper(sceneLoader.getRoot());
 
-		player = new Player();
+		player = new Player(sceneLoader.world);
 		root.getChild("player").addScript(player);
 
 		uiStage = new UIStage(sceneLoader.getRm());
+
+        sceneLoader.addComponentsByTagName("platform", PlatformComponent.class);
+
+        sceneLoader.getEngine().addSystem(new PlatformSystem());
 	}
 
 	@Override
