@@ -4,6 +4,7 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector2;
+import com.uwsoft.editor.renderer.components.DimensionsComponent;
 import com.uwsoft.editor.renderer.components.TransformComponent;
 import com.uwsoft.editor.renderer.scripts.IScript;
 import com.uwsoft.editor.renderer.utils.ComponentRetriever;
@@ -15,6 +16,7 @@ public class Player implements IScript {
 
     private Entity player;
     private TransformComponent transformComponent;
+    private DimensionsComponent dimensionsComponent;
 
     private Vector2 speed;
     private float gravity = -500f;
@@ -26,6 +28,7 @@ public class Player implements IScript {
         player = entity;
 
         transformComponent = ComponentRetriever.get(entity, TransformComponent.class);
+        dimensionsComponent = ComponentRetriever.get(entity, DimensionsComponent.class);
 
         speed = new Vector2(100, 0);
     }
@@ -50,11 +53,6 @@ public class Player implements IScript {
         speed.y+=gravity*delta;
 
         transformComponent.y += speed.y*delta;
-
-        if(transformComponent.y < 7f) {
-            speed.y = 0;
-            transformComponent.y = 7f;
-        }
     }
 
     public float getX() {
@@ -68,5 +66,9 @@ public class Player implements IScript {
     @Override
     public void dispose() {
 
+    }
+
+    public float getWidth() {
+        return dimensionsComponent.width;
     }
 }

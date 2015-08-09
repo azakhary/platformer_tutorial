@@ -45,6 +45,6 @@ public class PlatformerTutorial extends ApplicationAdapter {
 		uiStage.act();
 		uiStage.draw();
 
-		((OrthographicCamera)viewport.getCamera()).position.x = player.getX();
+		((OrthographicCamera)viewport.getCamera()).position.x = player.getX()+player.getWidth()/2f;
 	}
 }
